@@ -2,6 +2,20 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 # Examples:
+
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+  u1 = User.create(name:'james' email:"james@james.com" age:29)
+  u2 = User.create(name:'alex' email:"alex@alex.com" age: 30)
+  u3 = User.create(name:'bob' email:"bob@bob.com" age:40)
+  u4 = User.create(name:'jack' email:"jack@jack.com" age:55)
+
+  s1 = Song.create(name:"boom" description:"booomting" user_id:1)
+  s2 = Song.create(name:"topnotch" description:"top boom" user_id:2)
+  s3 = Song.create(name:"boom1" description:"booom2" user_id:3)
+  s1 = Song.create(name:"boom3" description:"booomting4" user_id:4)
+
+  c1 = Comment.create(song_id:1 content: "not that good")

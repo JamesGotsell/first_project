@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   resources :comments
   resources :songs
   devise_for :users
-  #root to: "home#index"
-  root to: "home#index"
+  devise_scope :user do 
+    root to: "devise/sessions#new"
+  end
+  #root to: "registrations#new"
 
 
   
