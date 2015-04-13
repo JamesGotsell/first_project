@@ -13,9 +13,11 @@ gem 'carrierwave'
 
 gem 'devise'
 
-# gem for cancan 
+# gem for cancancan
 
-gem "cancan"
+gem 'cancancan', '~> 1.10'
+
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
