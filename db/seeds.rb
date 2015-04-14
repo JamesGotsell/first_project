@@ -16,9 +16,9 @@
   s1 = u1.songs.create!(name:"boom", description:"booomting")
   s2 = Song.create!(name:"topnotch", description:"top boom", user_id:2)
   s3 = Song.create!(name:"boom1", description:"booom2", user_id:3)
-  s1 = Song.create!(name:"boom3", description:"booomting4", user_id:4)
+  s4 = Song.create!(name:"boom3", description:"booomting4", user_id:4)
 
   c1 = u1.comments.create!(song_id:1, content: "not that good")
   c2 = Comment.create!(song_id:3, content: "shit", user_id:2)
   c3 = Comment.create!(song_id:2, content: "rubbish", user_id:3)
-  c1 = Comment.create!(song_id:4, content: "total rubbish", user_id:4)
+  c4= Comment.create!(song_id:4, content: "total rubbish", user_id:4)

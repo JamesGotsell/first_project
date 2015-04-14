@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150413181829) do
+ActiveRecord::Schema.define(version: 20150414102515) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "song_id"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20150413181829) do
     t.string   "name"
     t.text     "picture"
     t.integer  "age"
+    t.text     "bio"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

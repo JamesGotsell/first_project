@@ -7,5 +7,8 @@ class User < ActiveRecord::Base
   has_many :songs 
   has_and_belongs_to_many :comments
 
+  validates :bio, length: { maximum: 500 
+  too_long: "%{count} characters is the maximum allowed" }
+
   mount_uploader :picture, PictureUploader
 end
