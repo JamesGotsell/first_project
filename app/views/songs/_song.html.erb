@@ -1,15 +1,15 @@
-<!--  i added the  -->
+<!--  i added this file to render information about the songs and the audio file within the dj profile page  -->
 
 <ul>
-  <li><%= song.name %></li>
-  <li><%= song.description %></li>
+  <li> name - <%= song.name %></li>
+  <li> description - <%= song.description %></li>
   
   
   <% @user.songs do |song| %>
   <li>
     <%=@song.user_id%>
     <% audio_tag @song.song %>
-    <audio src="<%=@song.song.url %>" controls </audio>
+    <audio src="<%=@song.song%>" controls </audio>
   </li>
   <% end %>
 
