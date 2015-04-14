@@ -10,6 +10,11 @@
   <%= @user.bio %>
 </p>
 
+<%#= audio_tag @song.audio_track %>
+ <audio src="<%#=@song.song.url %>" controls
+ </audio>
+
 
 
 <%= link_to 'Back', users_path %>
+<%#= link_to 'Edit', edit_users_path(@user) %>

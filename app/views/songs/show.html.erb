@@ -12,12 +12,23 @@
 
 <p>
   <strong>Song:</strong>
-  <%= @song.song %>
+  
+  <audio src="<%= @song.song %>" controls
+  </audio>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @song.user_id %>
+  <%= @song.user.name %>
+</p>
+
+<p>
+  <strong>Comments</strong>
+  <p>
+    <% @song.comments.each do |comments| %>
+      <span> <%=comments%></span>
+    <% end %>
+
 </p>
 
 <%= link_to 'Edit', edit_song_path(@song) %> |
