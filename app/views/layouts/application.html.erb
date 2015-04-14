@@ -14,16 +14,7 @@
 
 <body>
 
-  <% if user_signed_in? %>
-  <li>
-    <%= link_to('Logout', destroy_user_session_path) %>        
-  </li>
-  <%= link_to('Edit', edit_user_registration_path) %>
-  <% else %>
-  <li>
-    <%= link_to('Login', new_user_session_path)  %>  
-  </li>
-  <% end %>
+
 
 
   <nav class="top-bar" data-topbar role="navigation">
@@ -38,16 +29,31 @@
     <section class="top-bar-section">
       <!-- Right Nav Section -->
       <ul class="right">
-        <li class="active"><a href="#">Right Button Active</a></li>
+        <li><a href="#">Right Button Active</a></li>
         <li class="has-dropdown">
           <a href="#">Right Button Dropdown</a>
           <ul class="dropdown">
             <li><a href="#">First link in dropdown</a></li>
-            <li class="active"><a href="#">Active link in dropdown</a></li>
-            <li class="active"><a href="#">Active link in dropdown</a></li>
-            <li class="active"><a href="#">Active link in dropdown</a></li>
+            <li class="active"><%=link_to("DJs", users_path)%></li>
+            <li class="active"><%=link_to("Songs", songs_path) %></li>
+            <li class="active"><%=link_to("Comments", comments_path) %></li>
           </ul>
         </li>
+        <% if user_signed_in? %>
+        <li>
+          <%= link_to 'Edit', edit_user_registration_path %>
+        </li>
+        <li>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        </li>
+        <% else %>
+        <li>
+          <%= link_to 'Login', new_user_session_path  %>  
+        </li>
+        <li>
+        <%= link_to 'Register', new_user_registration_path  %>  
+        </li>
+        <% end %>
       </ul>
 
       <!-- Left Nav Section -->
@@ -57,9 +63,9 @@
     </section>
 
   </nav>
-  <main="row">
-  <%= yield %>
-</main>
+  <main class="row">
+    <%= yield %>
+  </main>
 
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
