@@ -1,23 +1,9 @@
 source 'https://rubygems.org'
 
-
-# gem file for foundation 
-
 gem 'foundation-rails'
-
-# gem for carrierwave 
-
-gem 'carrierwave'
-
-# gem for devise 
-
+gem 'carrierwave', '0.10.0'
 gem 'devise'
-
-# gem for cancancan
-
 gem 'cancancan', '~> 1.10'
-
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
