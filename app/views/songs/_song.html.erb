@@ -5,11 +5,12 @@
   <li> description - <%= song.description %></li>
   
   
-  <% @user.songs do |song| %>
+  
   <li>
+    <% @user.songs do |song| %>
     <%=@song.user_id%>
     <% audio_tag @song.song %>
-    <audio src="<%=@song.song%>" controls </audio>
+    <!-- <audio src="<%#=@song.song%>" controls </audio> -->
   </li>
   <% end %>
 
