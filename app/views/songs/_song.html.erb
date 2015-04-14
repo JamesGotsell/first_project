@@ -3,16 +3,16 @@
 <ul>
   <li> name - <%= song.name %></li>
   <li> description - <%= song.description %></li>
-  
-  
-  
   <li>
-    <% @user.songs do |song| %>
-    <%=@song.user_id%>
-    <% audio_tag @song.song %>
-    <!-- <audio src="<%#=@song.song%>" controls </audio> -->
+    <%@user.songs do |songs| %>
+    <%#=audio_tag @song.user_id %>
+    <%#= @song.user_id%>
+    <audio src="<%= @song.song.url %>" controls></audio> 
+    <!-- i'm struggle with this because the loop should display the song file in with the audio tag why -->
+    
+    <% end %>
   </li>
-  <% end %>
+  
 
 </ul> 
 
