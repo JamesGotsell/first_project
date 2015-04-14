@@ -10,6 +10,8 @@ class SongsController < ApplicationController
   # GET /songs/1
   # GET /songs/1.json
   def show
+
+      
   end
 
   # GET /songs/new

@@ -18,18 +18,23 @@
 </p>
 
 <p>
-  <strong>User:</strong>
+  <strong>DJ:</strong>
   <%= @song.user.name %>
 </p>
 
 <p>
   <strong>Comments</strong>
-  <p>
-    <% @song.comments.each do |comments| %>
-      <span> <%=comments%></span>
+
+  <!-- i'm trying to get all the comments relating to this song -->
+  
+  <ul><% @song.comments.each do |comments| %>
+    <li> <%=@comments%></li>
     <% end %>
 
-</p>
+    </ul
 
-<%= link_to 'Edit', edit_song_path(@song) %> |
-<%= link_to 'Back', songs_path %>
+  </p>
+
+
+  <%= link_to 'Edit', edit_song_path(@song) %> |
+  <%= link_to 'Back', songs_path %>

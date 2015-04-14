@@ -1,0 +1,9 @@
+<ul>
+  <li><%= song.name %></li>
+  <li><%= song.description %></li>
+  <li><%= song.name %></li>
+  <li><%= song.user.try(:name) %></li>
+  <li><%= link_to 'Show', song %></li>
+  <li><%= link_to 'Edit', edit_song_path(song) %></li>
+  <li><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+</ul>

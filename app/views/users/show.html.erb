@@ -10,11 +10,26 @@
   <%= @user.bio %>
 </p>
 
+<strong>Songs</strong>
+  <%= render @user.songs %> 
+
+<!--  i'm trying to get all the songs uploaded by this user  using a loop-->
+<ul><% @user.songs do |song| %>
+  <li>
+  <%=@song.user_id%>
+  <% audio_tag @song.song %>
+ <audio src="<%=@song.song.url %>" controls </audio>
+  </li>
+  <% end %>
+</ul>
+
+
+
 <%#= audio_tag @song.audio_track %>
- <audio src="<%#=@song.song.url %>" controls
- </audio>
+<!--  <audio src="<%#=@song.song.url %>" controls
+</audio> -->
 
 
 
 <%= link_to 'Back', users_path %>
-<%#= link_to 'Edit', edit_users_path(@user) %>
+<%#= link_to 'Edit', edit_users_path(@user)%>
