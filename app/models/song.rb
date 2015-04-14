@@ -3,7 +3,7 @@ class Song < ActiveRecord::Base
   has_many :comments
 
   validates :description, length: { maximum: 500,
-      too_long: "%{count} characters is the maximum allowed" }
+      too_long:"%{count} characters is the maximum allowed" }
 
   mount_uploader :song, AudioUploader
 end

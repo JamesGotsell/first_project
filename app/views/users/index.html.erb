@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Users</h1>
+<h1>Listing Users</h1>     
 
 <table>
   <thead>
@@ -12,10 +12,13 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        
         <td><%= link_to 'Show', user %></td>
       </tr>
+      
     <% end %>
   </tbody>
 </table>
+
 
 <br>
