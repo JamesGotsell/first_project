@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
 
-  <body>
+<body>
 
-    <% #if user_signed_in? %>
-      <li>
-      <%= link_to('Logout', destroy_user_session_path) %>        
-      </li>
-      <%= link_to('Edit', edit_user_registration_path) %>
-    <% else %>
-      <li>
-      <%= link_to('Login', new_user_session_path)  %>  
-      </li>
-    <%# end %>
+  <% if user_signed_in? %>
+  <li>
+    <%= link_to('Logout', destroy_user_session_path) %>        
+  </li>
+  <%= link_to('Edit', edit_user_registration_path) %>
+  <% else %>
+  <li>
+    <%= link_to('Login', new_user_session_path)  %>  
+  </li>
+  <% end %>
 
 
   <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
       <li class="name">
-        <h1><a href="#">DJ</a></h1>
+        <h1><a href="#">DJStudio</a></h1>
       </li>
-       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
 
@@ -43,6 +43,8 @@
           <a href="#">Right Button Dropdown</a>
           <ul class="dropdown">
             <li><a href="#">First link in dropdown</a></li>
+            <li class="active"><a href="#">Active link in dropdown</a></li>
+            <li class="active"><a href="#">Active link in dropdown</a></li>
             <li class="active"><a href="#">Active link in dropdown</a></li>
           </ul>
         </li>
@@ -56,22 +58,21 @@
 
   </nav>
   <main="row">
-    <%= yield %>
-  </main>
+  <%= yield %>
+</main>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    
-  </body>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
-  <footer> 
-    <ul class="breadcrumbs">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">DJs - neeed to add the link to ruby tag</a></li>
-      <li><%#= link_to "Song", songs %> </li>
-      <li><a href="#">Songs - need to add the  link to ruby tag </a></li>
-      
-    </ul>
+</body>
 
-  </footer>
+<footer> 
+  <ul class="breadcrumbs">
+    <li>home<%#=link_to('Login', new_user_session_path)%></li>
+    <li><%=link_to("DJs", users_path)%></li>
+    <li><%=link_to("Songs", songs_path) %> </li>  
+    <li><%=link_to("Comments", comments_path) %> </li>  
+  </ul>
+
+</footer>
 </html>
