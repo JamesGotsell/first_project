@@ -1,17 +1,17 @@
 <!--  i added the  -->
 
- <ul>
+<ul>
   <li><%= song.name %></li>
   <li><%= song.description %></li>
   <li><%= song.name %></li>
   <li><%= song.user.try(:name) %></li>
-</ul> 
-
-<ul><% @user.songs do |song| %>
+  <% @user.songs do |song| %>
   <li>
-  <%=@song.user_id%>
-  <% audio_tag @song.song %>
- <audio src="<%=@song.song.url %>" controls </audio>
+    <%=@song.user_id%>
+    <% audio_tag @song.song %>
+    <audio src="<%=@song.song.url %>" controls </audio>
   </li>
   <% end %>
-</ul>
+
+</ul> 
+
