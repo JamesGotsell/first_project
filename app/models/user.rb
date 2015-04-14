@@ -6,4 +6,7 @@ class User < ActiveRecord::Base
   has_many :songs 
   has_and_belongs_to_many :comments 
 
+
+  mount_uploader :picture, PictureUploader
+
 end
