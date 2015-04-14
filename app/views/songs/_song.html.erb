@@ -3,8 +3,8 @@
 <ul>
   <li><%= song.name %></li>
   <li><%= song.description %></li>
-  <li><%= song.name %></li>
-  <li><%= song.user.try(:name) %></li>
+  
+  
   <% @user.songs do |song| %>
   <li>
     <%=@song.user_id%>
