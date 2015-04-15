@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Users</h1>     
+<h1>Listing Users</h1>  
+<%= render @users %>
 
-<table>
+<%#= link_to 'New Song', new_song_path %>
+<!-- <table>
   <thead>
     <tr>
       <th>name</th>
@@ -12,15 +14,14 @@
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
+    <% #@users.each do |user| %>
       <tr>
-        <td><%= link_to user.name, user %></td>
-        <td><%= image_tag user.picture.thumb.url %></td>
-        <td><%= link_to 'Show', user %></td>
+        <td><%#= link_to user.name, user %></td>
+        <td><%#= image_tag user.picture.thumb.url %></td>
+        <td><%#= link_to 'Show', user %></td>
       </tr>
-    <% end %>
+    <%#end %>
   </tbody>
 </table>
+-->
 
-
-<br>
