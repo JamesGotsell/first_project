@@ -17,25 +17,26 @@
   </p>
   <p>
     <strong>Picture</strong>
-    <%=image_tag @song.song_picture.url %>
+    <%=image_tag @song.song_picture.thumb.url %>
   </p>
   <p>
     <strong>Song:</strong>
     <audio src="<%= @song.song.url %>" controls></audio>
   </p>
 
-<p>
-  <strong>Comments</strong>
+  <p>
+    <strong>Add Comments</strong>
+    <%= render partial: "comments/form", locals: { comment: @comment } %>
+  </p>
 
-  <!-- i'm trying to get all the comments relating to this song -->
-  
-  <ul><%@song.comments.each do |comments| %>
-    <li> <%= comments.content %></li>
+  <p>
+   <strong>Comments</strong>
+  <ul>
+    <% @song.comments.each do |comments| %>
+      <li><%= comments.content %></li>
     <% end %>
-    </ul>
-<!-- this displays the object of comments but not the comments assign to the song -->
+  </ul>
   </p>
   
-
   <%= link_to 'Edit', edit_song_path(@song) %> |
   <%= link_to 'Back', songs_path %>

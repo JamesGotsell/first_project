@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :comments
+  resources :comments, except: [:show]
   resources :songs
   devise_for :users
   devise_scope :user do 

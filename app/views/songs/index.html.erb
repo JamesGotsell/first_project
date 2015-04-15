@@ -1,24 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Songs</h1>
- <!-- removed table because the its not needed due to the render--> 
-<!-- <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Song</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody> -->
-    <%= render @songs %>
-<!--     
-  </tbody>
-</table>
- -->
-<br>
+<%= render @songs %>
 
 <%= link_to 'New Song', new_song_path %>

@@ -1,20 +1,9 @@
-<!--  i added this file to render information about the songs and the audio file within the dj profile page  -->
-
 <ul>
   <li> name - <%= song.name %></li>
   <li> description - <%= song.description %></li>
-  <li> photo - <%=image_tag song.song_picture.url %></li>
+  <li> photo - <%=image_tag song.song_picture.thumb.url %></li>
   <li>
     <audio src="<%= song.song.url %>" controls></audio>
-    <%# end %>
-       
   </li>
-  
-
 </ul>
-  <%= link_to 'Show', song %> 
-  <%= link_to 'New Comment', new_comment_path %>
-<!-- i'm struggle with this because the loop should display the song file in with the audio tag why -->
- <%#@user.songs do |songs| %> <!--- i'm having problems with the loop --> 
-    <%#=audio_tag @song.user_id %>
-    <%#= @song.user_id%>
+  <%= link_to 'Show', song, class: "button expand" %> 

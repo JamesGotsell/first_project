@@ -11,19 +11,19 @@
     </div>
   <% end %>
 
-  <!-- <div class="field">
-    <%#= f.label :song_id %><br>
-    <%#= f.number_field :song_id%>
-  </div> -->
+  <% if @song %>
+    <%= f.hidden_field :song_id, value: @song.id %>
+  <% else %>
     <div class="field">
-    <%= f.label :song_id %><br>
-    <%= f.collection_select :song_id, Song.all, :id, :name %>
-  </div>
+      <%= f.label :song_id %><br>
+      <%= f.collection_select :song_id, Song.all, :id, :name %>
+    </div>
+  <% end %>
   <div class="field">
     <%= f.label :content %><br>
     <%= f.text_area :content %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "button" %>
   </div>
 <% end %>
