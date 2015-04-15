@@ -5,12 +5,14 @@ class SongsController < ApplicationController
   # GET /songs.json
   def index
     @songs = Song.all
+
   end
 
   # GET /songs/1
   # GET /songs/1.json
   def show
     @comment = Comment.new
+    
   end
 
   # GET /songs/new
