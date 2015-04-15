@@ -3,15 +3,11 @@
 <ul>
   <li> name - <%= song.name %></li>
   <li> description - <%= song.description %></li>
+  <li> photo - <%=image_tag song.song_picture.url %></li>
   <li>
-   
     <audio src="<%= song.song.url %>" controls></audio>
-    
-    
     <%# end %>
-    <%= link_to 'Show', song %>
-       
-       
+    <%= link_to 'Show', song %>     
   </li>
   
 
