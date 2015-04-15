@@ -7,11 +7,13 @@
   <li>
     <audio src="<%= song.song.url %>" controls></audio>
     <%# end %>
-    <%= link_to 'Show', song %>     
+       
   </li>
   
 
-</ul> 
+</ul>
+  <%= link_to 'Show', song %> 
+  <%= link_to 'New Comment', new_comment_path %>
 <!-- i'm struggle with this because the loop should display the song file in with the audio tag why -->
  <%#@user.songs do |songs| %> <!--- i'm having problems with the loop --> 
     <%#=audio_tag @song.user_id %>
