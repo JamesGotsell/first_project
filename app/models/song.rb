@@ -6,4 +6,5 @@ class Song < ActiveRecord::Base
       too_long:"%{count} characters is the maximum allowed" }
 
   mount_uploader :song, AudioUploader
+  mount_uploader :picture, PictureUploader
 end
