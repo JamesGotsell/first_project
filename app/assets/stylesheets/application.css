@@ -15,3 +15,36 @@
  *= require foundation_and_overrides
 
  */
+
+.title-area li{
+    display: inline-block;
+    color: white;
+} 
+.right {
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+ .users li {
+   display: inline-block;
+   text-decoration: none;
+   font-style: 18px;
+ }
+ ul li {
+
+   padding: 10px;
+   margin: 2px;
+   text-decoration: none;
+ }
+
+
+ main {
+  text-align: center;
+   padding: 20px; 
+   /*font-size: 18px;*/
+ }
+
+
