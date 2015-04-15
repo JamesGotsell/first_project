@@ -11,9 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <!-- <div class="field">
+    <%#= f.label :song_id %><br>
+    <%#= f.number_field :song_id%>
+  </div> -->
+    <div class="field">
     <%= f.label :song_id %><br>
-    <%= f.number_field :song_id %>
+    <%= f.collection_select :song_id, Song.all, :id, :name %>
   </div>
   <div class="field">
     <%= f.label :content %><br>

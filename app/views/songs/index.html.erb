@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Songs</h1>
-
-<table>
+ <!-- removed table because the its not needed due to the render--> 
+<!-- <table>
   <thead>
     <tr>
       <th>Name</th>
@@ -13,12 +13,12 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody> -->
     <%= render @songs %>
-   
+<!--     
   </tbody>
 </table>
-
+ -->
 <br>
 
 <%= link_to 'New Song', new_song_path %>

@@ -14,6 +14,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # why did i put the code above in
+
   def after_sign_in_path_for(user)
     user_path(user)
   end

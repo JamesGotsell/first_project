@@ -1,31 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @song.name %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @song.description %>
-</p>
-
-<!-- <p>
-  <strong>Song:</strong>
-  
-  <audio src="<%#= @song.song %>" controls
-  </audio>
-</p>
--->
-<!-- i'm trying to get the song related to the user that added it -->
-<strong>Song:</strong>
-<%=  @song.song %> 
-<!-- @song.song displays the file added -->
 
 <p>
   <strong>DJ:</strong>
   <%= @song.user.name %>
 </p>
+<p>
+    <strong>Name:</strong>
+    <%= @song.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @song.description %>
+  </p>
+
+  <p>
+    <strong>Song:</strong>
+    <audio src="<%= @song.song.url %>" controls></audio>
+  </p>
 
 <p>
   <strong>Comments</strong>
@@ -33,12 +27,12 @@
   <!-- i'm trying to get all the comments relating to this song -->
   
   <ul><%@song.comments.each do |comments| %>
-    <li> <%= comments %></li>
+    <li> <%= comments.content %></li>
     <% end %>
-    </ul
+    </ul>
 <!-- this displays the object of comments but not the comments assign to the song -->
   </p>
-
+  
 
   <%= link_to 'Edit', edit_song_path(@song) %> |
   <%= link_to 'Back', songs_path %>

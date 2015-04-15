@@ -23,10 +23,15 @@
   <%= f.label :song %><br>
   <%= f.file_field :song %>
 </div>
-<div class="field">
-<!--  how can i only allow this user to add songs -->
+<!-- <div class="field">
+ how can i only allow this user to add songs
+  <%#= f.label :user_id %><br>
+  <%#= f.number_field :user_id %>
+</div> -->
+  <div class="field">
+  <!--- this allows user to choose who uploads....doesn't make sence because the user should login, and the web site should know which user has  --> 
   <%= f.label :user_id %><br>
-  <%= f.number_field :user_id %>
+  <%= f.collection_select :user_id, User.all, :id, :name %>
 </div>
 <div class="actions">
   <%= f.submit %>
