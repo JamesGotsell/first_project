@@ -1,9 +1,11 @@
-<ul>
-  <li> name - <%= song.name %></li>
-  <li> description - <%= song.description %></li>
-  <li> photo - <%=image_tag song.song_picture.thumb.url %></li>
-  <li>
-    <audio src="<%= song.song.url %>" controls></audio>
-  </li>
-</ul>
-  <%= link_to 'Show', song, class: "button expand" %> 
+<li>
+  <ul>
+    <li><h2><%= song.name %></h2></li>
+    <li>description - <%= song.description %></li>
+    <li><%=image_tag song.song_picture.thumb.url %></li>
+    <li>
+      <audio src="<%= song.song.url %>" controls></audio>
+    </li>
+    <li><%= link_to 'Show', song %> </li>
+  </ul>
+</li>

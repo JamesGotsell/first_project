@@ -31,11 +31,12 @@
 
   <p>
    <strong>Comments</strong>
-  <ul>
-    <% @song.comments.each do |comments| %>
+   <%=render @comments %> 
+  <!-- <ul>
+    <%# @song.comments.each do |comments| %>
       <li><%= comments.content %></li>
     <% end %>
-  </ul>
+  </ul> -->
   </p>
   
   <%= link_to 'Edit', edit_song_path(@song) %> |

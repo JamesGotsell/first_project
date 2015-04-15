@@ -1,10 +1,7 @@
-<ul>
-  <% #@users.each do |user| %>
-  
-      <li><%= link_to user.name, user %></li>
-      <li><%= image_tag user.picture.thumb.url %></li>
-      <li><%= link_to 'Show', user %></li>
-    
-  <% #end %>
-
-</ul>
+<li>
+  <ul>
+    <li><%= link_to user.name, user %></li>
+    <li><%= image_tag user.picture.thumb.url %></li>
+    <li><%= link_to 'Show', user %></li>
+  </ul>
+</li>

@@ -1,0 +1,5 @@
+<ul>
+  <% @song.comments.each do |comments| %>
+    <li><%= comments.content %></li>
+  <% end %>
+</ul>
