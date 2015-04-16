@@ -27,7 +27,7 @@ class Ability
         can :update, Song, user_id: user.id 
         can :update, Comment, user_id: user.id
         can :create, Song, user_id: user.id
-        can :create, Comment, user_id: user.id
+        can :create, Comment do |comment|
 
         # can :manage, User, user_id: user.id 
       end
