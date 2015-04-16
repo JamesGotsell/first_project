@@ -1,6 +1,4 @@
 <li>
-  <%= comment.content %>
-  <% if can? :destroy, comment %>
-    <%=link_to "Destroy", comment, method: :delete%>
-  <% end %>
+  <%= comment.content %>    
+  <%=link_to "Destroy", comment, method: :delete if can? :destroy, comment%>
 </li>
