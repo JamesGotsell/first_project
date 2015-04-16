@@ -10,11 +10,11 @@ class ApplicationController < ActionController::Base
       u.permit(:name, :email, :password, :password_confirmation)
     end
     devise_parameter_sanitizer.for(:account_update) do |u|
-      u.permit(:name, :email, :password, :password_confirmation, :current_password, :picture)
+      u.permit(:name, :email, :password, :password_confirmation, :current_password, :picture, :bio)
     end
   end
 
-  # why did i put the code above in
+  # params for both user sing up and update 
 
   def after_sign_in_path_for(user)
     user_path(user)

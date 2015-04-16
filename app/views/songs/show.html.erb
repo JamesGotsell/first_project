@@ -41,6 +41,9 @@
 
 <% if can? :update, @song %>
 <%= link_to 'Edit', edit_song_path(@song) %> |
-<%= link_to 'Back', songs_path %> | 
+<%= link_to 'Back', songs_path %> |
+<%end%>
+<% if can? :destroy, @song %>
 <%= link_to 'delete', @song, method: :delete, data: { confirm: 'Are you sure?' } %>
-<%end%> 
+<% end%> 
+

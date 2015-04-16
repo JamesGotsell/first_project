@@ -26,13 +26,14 @@
 }
 
 li {
-
+  text-decoration: none;
   font-family: monospace;
 }
 
  .users li {
    display: inline-block;
    list-style: none;
+   text-decoration: none;
    font-size: 25px;
  }
  ul li {
@@ -40,6 +41,7 @@ li {
    padding: 10px;
    margin: 2px;
    text-decoration: none;
+   list-style: none;
  }
 
 .dropdown{
