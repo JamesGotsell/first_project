@@ -1,7 +1,4 @@
 <p id="notice"><%= notice %></p>
-
-
-
 <p>
   <strong>DJ:</strong>
   <%= @song.user.name %>
@@ -23,8 +20,6 @@
   <strong>Song:</strong>
   <audio src="<%= @song.song.url %>" controls></audio>
 </p>
-<%# if can? :update, @song %>
-
 <%if user_signed_in? && @song.user != current_user %>
 <%if can? :create, @comment %>
 <p>
@@ -33,35 +28,22 @@
 </p>
 <% end %>
 <%end %>
-
 <% if can? :read, @song %>
 <p>
  <strong>Comments (<%= @song.comments.count %>)</strong>
- 
  <ul>
-    <%= render partial: "comments/comment", collection: Comment.where(song_id: @song.id) %> 
-  </ul>
+  <%= render partial: "comments/comment", collection: Comment.where(song_id: @song.id) %> 
+</ul>
 </p>
 <%end%> 
-
-
-
 <% if can? :update, @song %>
 <%= link_to 'Edit', edit_song_path(@song) %> |
 <%= link_to 'Back', songs_path %> |
 <%end%>
-
-<% if can? :create, @comment %>
- 
-<!--- i need to get each user to comment on different songs--> 
+<% if can? :create, @comment %> 
 <%end %>
-
-
-
 <% if can? :destroy, @song %>
 <%= link_to 'Delete', @song, method: :delete, data: { confirm: 'Are you sure?' } %>
-<%#= link_to 'Delete Comment', @comment, method: :delete, data: { confirm: 'Are you sure?' } %>
- <!-- i need to only allow the admin to delete each comment that doesn't redirect to comments index that  -->
 <% end%> 
 
 
