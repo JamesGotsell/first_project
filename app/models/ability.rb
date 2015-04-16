@@ -16,7 +16,7 @@ class Ability
       # edit comments 
       # i think that i've got this ability because the admin can manage all 
 
-      else user.role == "user"
+    else user.role == "user"
         # add comments 
         # add songs 
         #delete song 
@@ -28,9 +28,11 @@ class Ability
         can :update, Comment, user_id: user.id
         can :create, Song, user_id: user.id
         can :create, Comment do |comment|
+          comment.song.user != user.id
+        end
 
         # can :manage, User, user_id: user.id 
       end
     end
 
-end
+  end

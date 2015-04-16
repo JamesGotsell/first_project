@@ -14,8 +14,7 @@ class SongsController < ApplicationController
   # GET /songs/1
   # GET /songs/1.json
   def show
-    @comment = Comment.new
-    
+    @comment = @song.comments.new
   end
 
   # GET /songs/new

@@ -24,12 +24,15 @@
   <audio src="<%= @song.song.url %>" controls></audio>
 </p>
 <%# if can? :update, @song %>
-<p>
-<% if can? :create, @song %>
-  <strong>Add Comments!</strong>
-  <%= render partial: "comments/form", locals: { comment: @comment } %>
-</p>
-<%end%>
+
+<%if user_signed_in? && @song.user != current_user %>
+  <%if can? :create, @comment %>
+  <p>
+    <strong>Add Comments!</strong>
+    <%= render partial: "comments/form", locals: { comment: @comment } %>
+  </p>
+  <% end %>
+<%end %>
 
 <% if can? :read, @song %>
 <p>
