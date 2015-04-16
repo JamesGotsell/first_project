@@ -26,18 +26,20 @@
 <%# if can? :update, @song %>
 
 <%if user_signed_in? && @song.user != current_user %>
-  <%if can? :create, @comment %>
-  <p>
-    <strong>Add Comments!</strong>
-    <%= render partial: "comments/form", locals: { comment: @comment } %>
-  </p>
-  <% end %>
+<%if can? :create, @comment %>
+<p>
+  <strong>Add Comments!</strong>
+  <%= render partial: "comments/form", locals: { comment: @comment } %>
+</p>
+<% end %>
 <%end %>
 
 <% if can? :read, @song %>
 <p>
  <strong>Comments</strong>
- <%= render  @song.comments %> 
+ <ul>
+    <%= render  @song.comments %> 
+  </ul>
 </p>
 <%end%> 
 
@@ -49,13 +51,17 @@
 <%end%>
 
 <% if can? :create, @comment %>
-      <%=%> 
-      <!--- i need to get each user to comment on different songs--> 
+ 
+<!--- i need to get each user to comment on different songs--> 
 <%end %>
 
 
 
 <% if can? :destroy, @song %>
 <%= link_to 'Delete', @song, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%#= link_to 'Delete Comment', @comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+ <!-- i need to only allow the admin to delete each comment that doesn't redirect to comments index that  -->
 <% end%> 
+
+
 

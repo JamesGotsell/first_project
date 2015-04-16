@@ -11,6 +11,7 @@ class Ability
 
       if user.role == "admin"
         can :manage, :all 
+        can :destroy, Comment
       # delete comments 
       # delete songs 
       # edit comments 
