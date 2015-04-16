@@ -26,20 +26,20 @@
 }
 
 li {
-  list-style: none;
+
   font-family: monospace;
 }
 
  .users li {
    display: inline-block;
-   text-decoration: none;
+   list-style: none;
    font-size: 25px;
  }
  ul li {
-
+/*add class to li's*/
    padding: 10px;
    margin: 2px;
-   /*text-decoration: none;*/
+   text-decoration: none;
  }
 
 .dropdown{

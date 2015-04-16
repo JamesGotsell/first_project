@@ -31,7 +31,7 @@
 
   <p>
    <strong>Comments (where comments should be)</strong>
-   <%= render partial: "comments/comment", locals: { comment: @comment } %> 
+   <%= render  @song.comments %> 
   </p>
   
   <%= link_to 'Edit', edit_song_path(@song) %> |
