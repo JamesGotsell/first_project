@@ -1,7 +1,7 @@
 <li>
   <ul class="users">
     <li><%= link_to user.name, user %></li>
-    <li><%= image_tag user.picture.thumb.url %></li>
+    <li><%= image_tag user.picture.thumb.url, :class => "user_photo" %></li>
     <li><%= link_to 'Show', user %></li>
   </ul>
 </li>

@@ -31,11 +31,19 @@ li {
 }
 
  .users li {
-   display: inline-block;
+   display: block;
    list-style: none;
    text-decoration: none;
-   font-size: 25px;
+   font-size: 45px;
+   margin: 10px;
  }
+ .top-bar-section li.active:not(.has-form) a:not(.button){
+  background-color: #cfcfcf;
+ }
+ ul li ul, ul li ol{
+  background-color: #cfcfcf;
+ }
+
  ul li {
 /*add class to li's*/
    padding: 10px;
@@ -43,7 +51,9 @@ li {
    text-decoration: none;
    list-style: none;
  }
-
+ .top-bar{
+  height: 5rem;
+ }
 .dropdown{
   font-family: monospace;
 }
@@ -64,4 +74,14 @@ p {
   font-size: 20px 
 }
 
+.hipster_image { 
 
+ float: left;
+ border-radius: 25px;
+
+}
+
+
+.breadcrumbs { 
+
+}

@@ -20,9 +20,9 @@
       <li> 
       <h2><%=link_to "About", page_path('about')%></h2>
       </li>
-      <li class="name">
-        <h1><%=link_to("DJStudio", users_path)%></h1>
-      </li>
+      <!-- <li class="name">
+        <h1><%#=link_to("DJStudio", users_path)%></h1>
+      </li> -->
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
 
@@ -70,7 +70,7 @@
 </body>
 <footer> 
   <ul class="breadcrumbs">
-    <li>home<%#=link_to('Login', new_user_session_path)%></li>
+    <li><%=link_to "Home", page_path('home')%>
     <li><%=link_to("DJs", users_path)%></li>
     <li><%=link_to("Songs", songs_path) %> </li>    
   </ul>
