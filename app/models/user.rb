@@ -11,4 +11,12 @@ class User < ActiveRecord::Base
   too_long:"%{count} characters is the maximum allowed" }
 
   mount_uploader :picture, PictureUploader
+
+  before_create :set_default_role
+
+  private
+
+  def set_default_role 
+    self.role ||= "user"
+  end 
 end

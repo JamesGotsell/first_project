@@ -9,10 +9,11 @@ class Ability
       #   can :read, :all
       # end
 
-      if user.role == "Admin"
+      if user.role == "admin"
         can :manage, :all 
-      else user.role == "User"
-        can :read, User
-        can :manage, User, user_id: user.id 
+      else user.role == "user"
+        # can :read, User 
+        can :read, :all
+        # can :manage, User, user_id: user.id 
       end
     end

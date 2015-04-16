@@ -8,7 +8,8 @@
 #   Mayor.create!(name: 'Emanuel', city: cities.first)
 
 
-  u1 = User.create!(name:'james', email:'james@james.com', password: "password", age:29)
+  u1 = User.create!(name:'james', email:'james@james.com', password: "password", age:29, role:'admin')
+
   u2 = User.create!(name:'alex', email:'alex@alex.com', password: "password", age: 30)
   u3 = User.create!(name:'bob', email:'bob@bob.com', password: "password", age:40)
   u4 = User.create!(name:'jack', email:'jack@jack.com', password: "password", age:55)

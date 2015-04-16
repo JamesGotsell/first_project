@@ -17,25 +17,23 @@
       <li class="name">
         <h1><%=link_to("DJStudio", users_path)%></h1>
       </li>
-      <li><%= link_to 'Add New Song', new_song_path %></li>
-      <li><%= link_to 'New Comment', new_comment_path %></li>
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
 
     <section class="top-bar-section">
       <!-- Right Nav Section -->
       <ul class="right">
-        
+        <% if user_signed_in? %>
           <li class="has-dropdown">
           <a href="#">Menu</a>
           <ul class="dropdown">
             <!-- <li><a href="#">First link in dropdown</a></li> -->
             <li class="active"><%=link_to("DJs", users_path)%></li>
             <li class="active"><%=link_to("Songs", songs_path) %></li>
-            <li class="active"><%=link_to("Comments", comments_path) %></li>
+            
           </ul>
         </li>
-        <% if user_signed_in? %>
+        
         <li>
           <%= link_to 'Edit', edit_user_registration_path %>
         </li>
@@ -51,6 +49,13 @@
         </li>
         <% end %>
       </ul>
+      <!-- Left Nav Section -->
+          <ul class="left">
+            
+            <li><%= link_to 'Add New Song', new_song_path %></li>
+            <li><%= link_to 'New Comment', new_comment_path %></li>
+          </ul>
+      </section>
   </nav>
   <main class="row">
     <%= yield %>
