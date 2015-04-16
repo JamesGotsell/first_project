@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Songs</h1>
+
+<%= search_form_for @search do |f| %>
+<div class="field">
+ <%= f.label :name_cont, "Search Songs" %>
+ <%= f.text_field :name_cont %>
+</div>
+<div class="actions"><%= f.submit "Search" %></div>
+<% end %>
+
+
 <ul><%= render @songs %></ul>
 
 

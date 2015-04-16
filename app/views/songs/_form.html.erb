@@ -34,8 +34,13 @@
 </div> -->
   <div class="field">
   <!--- this allows user to choose who uploads....doesn't make sence because the user should login, and the web site should know which user has  --> 
+  <% if can? :create, @song %>
+
+        <%=%> 
   <%= f.label :user_id %><br>
   <%= f.collection_select :user_id, User.all, :id, :name %>
+
+  <%end %>
 </div>
 <div class="actions">
   <%= f.submit class: "button" %>
