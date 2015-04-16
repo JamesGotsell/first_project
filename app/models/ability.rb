@@ -17,3 +17,5 @@ class Ability
         # can :manage, User, user_id: user.id 
       end
     end
+
+end

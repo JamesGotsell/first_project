@@ -7,32 +7,40 @@
   <%= @song.user.name %>
 </p>
 <p>
-    <strong>Name:</strong>
-    <%= @song.name %>
-  </p>
+  <strong>Name:</strong>
+  <%= @song.name %>
+</p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= @song.description %>
-  </p>
-  <p>
-    <strong>Picture</strong>
-    <%=image_tag @song.song_picture.thumb.url %>
-  </p>
-  <p>
-    <strong>Song:</strong>
-    <audio src="<%= @song.song.url %>" controls></audio>
-  </p>
+<p>
+  <strong>Description:</strong>
+  <%= @song.description %>
+</p>
+<p>
+  <strong>Picture</strong>
+  <%=image_tag @song.song_picture.thumb.url %>
+</p>
+<p>
+  <strong>Song:</strong>
+  <audio src="<%= @song.song.url %>" controls></audio>
+</p>
+<% if can? :update, @song %>
+<p>
+  <strong>Add Comments!</strong>
+  <%= render partial: "comments/form", locals: { comment: @comment } %>
+</p>
+<%end%>
 
-  <p>
-    <strong>Add Comments!</strong>
-    <%= render partial: "comments/form", locals: { comment: @comment } %>
-  </p>
+<% if can? :read, @song %>
+<p>
+ <strong>Comments</strong>
+ <%= render  @song.comments %> 
+</p>
+<%end%> 
 
-  <p>
-   <strong>Comments (where comments should be)</strong>
-   <%= render  @song.comments %> 
-  </p>
-  
-  <%= link_to 'Edit', edit_song_path(@song) %> |
-  <%= link_to 'Back', songs_path %>
+
+
+<% if can? :update, @song %>
+<%= link_to 'Edit', edit_song_path(@song) %> |
+<%= link_to 'Back', songs_path %> | 
+<%= link_to 'delete', @song, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%end%> 
