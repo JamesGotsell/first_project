@@ -15,14 +15,11 @@
   <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
       <li> 
-      <h2><%=link_to "Home", page_path('home')%></h2>
+        <h2><%=link_to "Home", page_path('home')%></h2>
       </li>
       <li> 
-      <h2><%=link_to "About", page_path('about')%></h2>
+        <h2><%=link_to "About", page_path('about')%></h2>
       </li>
-      <!-- <li class="name">
-        <h1><%#=link_to("DJStudio", users_path)%></h1>
-      </li> -->
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
 
@@ -30,16 +27,13 @@
       <!-- Right Nav Section -->
       <ul class="right">
         <% if user_signed_in? %>
-          <li class="has-dropdown">
+        <li class="has-dropdown">
           <a href="#">Menu</a>
           <ul class="dropdown">
-            <!-- <li><a href="#">First link in dropdown</a></li> -->
             <li class="active"><%=link_to("DJs", users_path)%></li>
-            <li class="active"><%=link_to("Songs", songs_path) %></li>
-            
+            <li class="active"><%=link_to("Songs", songs_path) %></li> 
           </ul>
         </li>
-        
         <li>
           <%= link_to 'Edit', edit_user_registration_path %>
         </li>
@@ -51,28 +45,27 @@
           <%= link_to 'Login', new_user_session_path  %>  
         </li>
         <li>
-        <%= link_to 'Register', new_user_registration_path  %>  
+          <%= link_to 'Register', new_user_registration_path  %>  
         </li>
         <% end %>
       </ul>
       <!-- Left Nav Section -->
-          <ul class="left">
-            <li><%= link_to 'Add New Song', new_song_path %></li>
-            <!-- <li><%#= link_to 'New Comment', new_comment_path %></li> -->
-          </ul>
-      </section>
+      <ul class="left">
+        <li><%= link_to 'Add New Song', new_song_path %></li>
+      </ul>
+    </section>
   </nav>
   <main class="row">
     <%= yield %>
   </main>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 </body>
 <footer> 
   <ul class="breadcrumbs">
     <li><%=link_to "Home", page_path('home')%>
-    <li><%=link_to("DJs", users_path)%></li>
-    <li><%=link_to("Songs", songs_path) %> </li>    
-  </ul>
-</footer>
-</html>
+      <li><%=link_to("DJs", users_path)%></li>
+      <li><%=link_to("Songs", songs_path) %> </li>    
+    </ul>
+  </footer>
+  </html>
