@@ -4,13 +4,13 @@ gem 'foundation-rails'
 gem 'carrierwave', '0.10.0'
 gem 'devise'
 gem 'cancancan', '~> 1.10'
-# gem 'rmagick', '2.14.0'
+gem 'rmagick', '4.0.0'
 gem 'ransack'
-gem 'high_voltage', '~> 2.2.1'
-gem 'bundler', '1.17.3'
-
+gem 'high_voltage'
+gem 'bundler'
+gem 'json'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.1'
+gem 'rails' 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
